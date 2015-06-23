@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +59,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\game.js.map" />
+    <Content Include="packages.config" />
+    <Content Include="objects\button.js.map" />
+    <Content Include="objects\image.js.map" />
+    <Content Include="objects\label.js.map" />
+    <Content Include="assets\images\atlas.json" />
+    <Content Include="assets\images\slot-machine.tps" />
+    <Content Include="assets\images\UI Element Positions.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,32 +75,61 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\bird.png" />
-    <Content Include="assets\images\cow.png" />
-    <Content Include="assets\images\donald.png" />
-    <Content Include="assets\images\jerry.jpg" />
-    <Content Include="assets\images\panda.png" />
-    <Content Include="assets\images\pingu.png" />
-    <Content Include="assets\images\sheep.png" />
-    <Content Include="assets\images\zebra.png" />
+    <Content Include="assets\audio\clicked.wav" />
+    <Content Include="assets\images\atlas.png" />
+    <Content Include="assets\images\bananaSymbol.png" />
+    <Content Include="assets\images\barSymbol.png" />
+    <Content Include="assets\images\bellSymbol.png" />
+    <Content Include="assets\images\betMaxButton.png" />
+    <Content Include="assets\images\betOneButton.png" />
+    <Content Include="assets\images\betTenButton.png" />
+    <Content Include="assets\images\blankSymbol.jpg" />
+    <Content Include="assets\images\button-template.png" />
+    <Content Include="assets\images\cherrySymbol.png" />
+    <Content Include="assets\images\grapesSymbol.png" />
+    <Content Include="assets\images\orangeSymbol.png" />
+    <Content Include="assets\images\power.png" />
+    <Content Include="assets\images\resetButton.png" />
+    <Content Include="assets\images\sevenSymbol.png" />
+    <Content Include="assets\images\slotMachine.png" />
+    <Content Include="assets\images\spinButton.png" />
+    <Content Include="css\main.css" />
     <Content Include="index.html" />
+    <Content Include="objects\button.js" />
+    <Content Include="objects\image.js" />
+    <Content Include="objects\label.js" />
+    <Content Include="scripts\game.js" />
+    <Content Include="scripts\lib\easeljs-0.8.0.min.js" />
+    <Content Include="scripts\lib\preloadjs-0.6.0.min.js" />
+    <Content Include="scripts\lib\soundjs-0.6.0.min.js" />
+    <Content Include="scripts\lib\Stats.js" />
+    <Content Include="scripts\lib\tweenjs-0.6.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\audio\" />
-    <Folder Include="assets\css\" />
-    <Folder Include="css\" />
-    <Folder Include="objects\" />
-    <Folder Include="scripts\" />
+    <Folder Include="assets\fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="objects\button.ts" />
+    <TypeScriptCompile Include="objects\label.ts" />
+    <TypeScriptCompile Include="scripts\game.ts" />
+    <TypeScriptCompile Include="scripts\typings\createjs-lib\createjs-lib.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\easeljs\easeljs.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\preloadjs\preloadjs.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\soundjs\soundjs.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\stats\stats.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\tweenjs\tweenjs.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
