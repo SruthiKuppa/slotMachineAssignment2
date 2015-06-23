@@ -59,7 +59,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scripts\game.js.map" />
     <Content Include="packages.config" />
     <Content Include="objects\button.js.map" />
     <Content Include="objects\image.js.map" />
@@ -67,6 +66,7 @@
     <Content Include="assets\images\atlas.json" />
     <Content Include="assets\images\slot-machine.tps" />
     <Content Include="assets\images\UI Element Positions.xlsx" />
+    <Content Include="scripts\game.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
